@@ -1,0 +1,14 @@
+{
+  "name": "psql-js",
+  "version": "1.0.0",
+  "description": "psql with js demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lukas Horak",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^7.11.0"
+  }
+}
