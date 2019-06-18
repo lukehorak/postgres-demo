@@ -1,5 +1,5 @@
-const pg = require("pg");
 const settings = require("./settings"); // settings.json
+const config = require('./knexfile');
 
 // Store name in 'arg' variable for convenience later
 const arg = process.argv[2];
@@ -14,6 +14,8 @@ const knex = require('knex')({
     port: settings.port
   }
 });
+
+// const knex = require('knex')(config);
 
 knex.select("first_name", "last_name", knex.raw("to_char(birthdate, 'YYYY-MM-DD') as birthdate"))
   .where("first_name", "like", `%${arg}%`)
@@ -30,6 +32,9 @@ knex.select("first_name", "last_name", knex.raw("to_char(birthdate, 'YYYY-MM-DD'
           returnString += `\n- ${count}: ${person.first_name} ${person.last_name}, born '${person.birthdate}'`
         }
         console.log(returnString);
+      }
+      else {
+        console.log("No results found!");
       }
       })
     .finally(() => {
