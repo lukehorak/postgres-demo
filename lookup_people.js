@@ -31,7 +31,6 @@ client.connect((err) => {
       let count = 0;
       for (let person of result.rows) {
         count += 1;
-        console.log(person.birthdate);
         returnString += `\n- ${count}: ${person.first_name} ${person.last_name}, born '${person.birthdate}'`
       }
       console.log(returnString);
