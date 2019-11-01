@@ -9,7 +9,7 @@
   "author": "Lukas Horak",
   "license": "ISC",
   "dependencies": {
-    "knex": "^0.17.6",
+    "knex": "^0.20.1",
     "pg": "^7.11.0"
   }
 }
